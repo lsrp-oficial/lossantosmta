@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Los Santos Roleplay</title>
+  <link rel="icon" href="img/logo (1).png" type="image/png">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <img src="img/logo (1).png" alt="Logo LSRP" class="nav-logo">
+      <ul class="nav-links">
+        <li><a href="https://discord.gg/KJPJNBAzGX"><i class="fab fa-discord"></i> Discord</a></li>
+        <li><a href="https://ls-rp-tienda-oficial.tebex.io/"><i class="fas fa-store"></i> Tienda</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-text">
+      <img src="img/logo (1).png" alt="Logo Los Santos" class="logo">
+      <h1>Los Santos Roleplay</h1>
+      <p>Donde tu historia toma vida.</p>
+      <div class="cta-buttons">
+        <a href="https://discord.gg/KJPJNBAzGX" class="btn">Únete al Discord</a>
+        <a href="https://ls-rp-tienda-oficial.tebex.io/" class="btn secondary">Visitar Tienda</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>Sobre Nosotros</h2>
+    <p>Los Santos Roleplay es un servidor de rol serio y progresivo dentro del universo de MTA. Nuestra comunidad está centrada en brindar experiencias únicas, realistas y memorables a todos los jugadores.</p>
+  </section>
+
+ <section class="info-boxes">
+  <div class="info-box server-status">
+    <h3><i class="fas fa-server"></i> Estado del Servidor</h3>
+    <iframe 
+      src="https://www.game-state.com/147.189.172.236:22133/560x95_FFFFFF_66ccff_000000_000000.png" 
+      style="border: none;" 
+      title="Estado del Servidor"
+    ></iframe>
+  </div>
+</section>
+
+
+ <section class="features">
+  <h2>Características Destacadas</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h4>💼 Economía Detallada</h4>
+      <p>Desde trabajos básicos hasta grandes negocios, nuestro sistema económico está cuidadosamente balanceado para ofrecer una experiencia realista y justa para todos los jugadores.</p>
+    </div>
+    <div class="feature-item">
+      <h4>📅 Eventos Frecuentes</h4>
+      <p>Participá de una variedad de eventos dinámicos y torneos emocionantes dentro del servidor, diseñados para mantener la acción y la competencia siempre activas. Desde carreras, misiones especiales hasta competencias entre facciones, siempre habrá algo nuevo para disfrutar.</p>
+    </div>
+    <div class="feature-item">
+      <h4>🏢 Facciones Diversas</h4>
+      <p>Formá parte de diferentes facciones, como el Departamento de Policía de Los Santos, el Servicio Médico de Emergencias y la exclusiva facción de mecánicos "GasMonkey". Cada una con roles y misiones únicas para que elijas la historia que más te guste vivir.</p>
+    </div>
+    <div class="feature-item">
+      <h4>🧑 Comunidad Activa</h4>
+      <p>Contamos con una comunidad sólida y amigable, acompañada de un equipo Staff comprometido y activo las 24 horas para asegurar una experiencia de juego justa, divertida y segura para todos.</p>
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <p>Los Santos Roleplay &copy; 2025. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    gsap.from(".hero-text", { duration: 2, y: -40, opacity: 0, ease: "power3.out" });
+    gsap.from(".info-box", { duration: 1.5, opacity: 0, y: 30, stagger: 0.2, delay: 0.5 });
+    gsap.from(".feature-item", {
+      duration: 2,
+      y: 40,
+      opacity: 0,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".features",
+        start: "top 80%"
+      }
+    });
+  </script>
+</body>
+</html>

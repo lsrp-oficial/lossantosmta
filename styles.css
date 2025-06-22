@@ -1,0 +1,396 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b0f1a;
+  color: #cfdff6;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0d1a2f;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  height: 74px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative; /* necesario para posicionar el pseudo-elemento */
+  border-bottom: none; /* quito el borde viejo */
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* grosor del borde */
+  background: linear-gradient(to right, #1e90ff, #5aa0ff);
+  border-radius: 2px 2px 0 0;
+}
+
+
+.nav-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 67px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  position: absolute;
+  right: 0;
+  margin: 0;
+  padding: 0 30px;
+  height: 70px;
+  align-items: center;
+  top: 0;
+  background-color: transparent;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #a9c8ff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #5a9eff;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(10,20,40,0.85), rgba(10,20,40,0.85)),
+              url('img/fondols.jpg') no-repeat center center / cover;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  color: #cfdff6;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 800px;
+}
+
+.logo {
+  height: 365px;
+  width: auto;
+  margin-bottom: -40px;
+  animation: pulseScale 6s ease-in-out infinite;
+  transform-origin: center center;
+  filter: drop-shadow(0 0 10px #1e90ff);
+}
+@keyframes backgroundGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.1);
+  }
+}
+
+.hero {
+  animation: backgroundGlow 10s ease-in-out infinite;
+}
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px #1e90ff);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px #4da6ff);
+  }
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #8bbfff;
+  text-shadow: 0 0 10px rgba(139, 191, 255, 0.7);
+  position: relative;
+  display: inline-block;
+}
+.hero h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #5a9eff;
+  margin: 15px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #5a9eff;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #a9c8ff;
+  margin-bottom: 30px;
+  text-shadow: 0 0 6px rgba(169, 200, 255, 0.5);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+
+.cta-buttons {
+  margin-top: -10px;
+}
+.cta-buttons .btn {
+  background-color: #1e90ff;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+.cta-buttons .btn:hover {
+  background-color: #1565c0;
+}
+.cta-buttons .btn.secondary {
+  background-color: #072252c9;
+}
+.cta-buttons .btn.secondary:hover {
+  background-color: #6671be;
+}
+
+
+
+
+/* About */
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #101929;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #70b6ff;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #c4d6f3;
+}
+
+/* Info Boxes */
+.info-boxes {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #0f1a28;
+  display: flex;
+  justify-content: center;
+}
+
+.info-box.server-status {
+  width: 100%;
+  max-width: 640px;
+  background: #192c45;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(14, 114, 187, 0.3);
+  text-align: center;
+}
+
+.info-box.server-status h3 {
+  color: #7abaff;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.info-box.server-status iframe {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+/* Features */
+.features {
+  background-color: #121e32;
+  padding: 60px 20px;
+  text-align: center;
+}
+.features h2 {
+  font-size: 2rem;
+  color: #70b6ff;
+  margin-bottom: 40px;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  grid-auto-rows: 1fr; 
+}
+.feature-item {
+  background-color: #1c2e4a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(42, 108, 182, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  height: 100%;
+}
+.feature-item:hover {
+  transform: none; 
+}
+.feature-item h4 {
+  color: #8bbfff;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  color: #a5cfff;
+  font-size: 1rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+
+
+
+
+
+
+
+
+/* Footer */
+.footer {
+  background: #0c1828;
+  color: #c2dbff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  position: relative;
+  animation: fadeSlideUp 0.8s ease forwards;
+  animation-delay: 1.4s;
+  box-shadow: inset 0 4px 10px -6px #1e90ff; /* sombra interna sutil celeste */
+  border-top: 3px solid transparent; /* para dar espacio */
+  border-image: linear-gradient(to right, #1e90ff, #5aa0ff) 1; /* borde con degradado celeste */
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nav-links {
+    position: static;
+    justify-content: flex-end;
+    padding: 0;
+    gap: 15px;
+  }
+  .nav-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  .logo {
+    height: 280px;
+    margin-bottom: -20px;
+  }
+  .hero-text {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    gap: 10px;
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+  .nav-logo {
+    height: 50px;
+  }
+  .logo {
+    height: 200px;
+    margin-bottom: -10px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .cta-buttons .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .about {
+    padding: 40px 15px;
+  }
+  .features {
+    padding: 40px 15px;
+  }
+}
+/* Scrollbar para navegadores WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* ancho de la barra */
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f1a; /* fondo del track, oscuro para que combine */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1e90ff; /* celeste */
+  border-radius: 10px;
+  border: 3px solid #0b0f1a; /* un borde para dar espacio y que no se vea tan pegado */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5aa0ff; /* celeste más claro al pasar el mouse */
+}
+
+/* Scrollbar para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #064583 #0b0f1a;
+}
