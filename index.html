@@ -15,6 +15,7 @@
     <div class="nav-container">
       <img src="img/logo (1).png" alt="Logo LSRP" class="nav-logo">
       <ul class="nav-links">
+          <li><a href="mtasa://147.189.172.236:22133" target="_blank" rel="noopener noreferrer">Conectarse</a></li>
          <li><a href="https://discord.gg/KJPJNBAzGX" target="_blank" rel="noopener noreferrer">Discord</a></li>
     <li><a href="https://ls-rp-tienda-oficial.tebex.io/" target="_blank" rel="noopener noreferrer">Tienda</a></li>
       </ul>
@@ -78,7 +79,7 @@
   <span class="footer-text">Los Santos Roleplay &copy; 2025. Todos los derechos reservados.
   </span>
   <div class="credit-toggle" tabindex="0" role="button" aria-pressed="false" aria-label="Mostrar crédito">
-    &#x24D8; <!-- símbolo info dentro de un círculo -->
+    &#x24D8; 
   </div>
   <div class="credit-text" aria-hidden="true">
     by: @deltaccak
@@ -105,16 +106,16 @@
   const creditText = document.querySelector('.credit-text');
 
   toggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // para que no cierre inmediatamente al hacer click en el mismo toggle
+    e.stopPropagation(); 
     creditText.classList.toggle('show');
     
     const isPressed = toggle.getAttribute('aria-pressed') === 'true';
     toggle.setAttribute('aria-pressed', !isPressed);
   });
 
-  // Cuando se hace click en cualquier parte fuera del toggle y del texto, cierra el texto
+
   document.addEventListener('click', (e) => {
-    // Si el texto está visible y el click NO fue en toggle ni en el texto, lo ocultamos
+ 
     if (creditText.classList.contains('show') &&
        !toggle.contains(e.target) &&
        !creditText.contains(e.target)) {
