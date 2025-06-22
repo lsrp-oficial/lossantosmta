@@ -73,10 +73,17 @@
 </section>
 
 
-  <footer class="footer">
-    <p>Los Santos Roleplay &copy; 2025. Todos los derechos reservados.</p>
-  </footer>
-
+  
+<footer class="footer">
+  <span class="footer-text">Los Santos Roleplay &copy; 2025. Todos los derechos reservados.
+  </span>
+  <div class="credit-toggle" tabindex="0" role="button" aria-pressed="false" aria-label="Mostrar crédito">
+    &#x24D8; <!-- símbolo info dentro de un círculo -->
+  </div>
+  <div class="credit-text" aria-hidden="true">
+    by: @deltaccak
+  </div>
+</footer>
   <script>
     gsap.from(".hero-text", { duration: 2, y: -40, opacity: 0, ease: "power3.out" });
     gsap.from(".info-box", { duration: 1.5, opacity: 0, y: 30, stagger: 0.2, delay: 0.5 });
@@ -91,5 +98,32 @@
       }
     });
   </script>
+
+
+<script>
+  const toggle = document.querySelector('.credit-toggle');
+  const creditText = document.querySelector('.credit-text');
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // para que no cierre inmediatamente al hacer click en el mismo toggle
+    creditText.classList.toggle('show');
+    
+    const isPressed = toggle.getAttribute('aria-pressed') === 'true';
+    toggle.setAttribute('aria-pressed', !isPressed);
+  });
+
+  // Cuando se hace click en cualquier parte fuera del toggle y del texto, cierra el texto
+  document.addEventListener('click', (e) => {
+    // Si el texto está visible y el click NO fue en toggle ni en el texto, lo ocultamos
+    if (creditText.classList.contains('show') &&
+       !toggle.contains(e.target) &&
+       !creditText.contains(e.target)) {
+      creditText.classList.remove('show');
+      toggle.setAttribute('aria-pressed', 'false');
+    }
+  });
+</script>
+
+
 </body>
 </html>
