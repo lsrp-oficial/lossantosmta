@@ -101,7 +101,7 @@ body {
   height: 365px;
   width: auto;
   margin-bottom: -40px;
-  animation: pulseScale 6s ease-in-out infinite;
+  animation: pulseScale 4.5s ease-in-out infinite;
   transform-origin: center center;
   filter: drop-shadow(0 0 10px #1e90ff);
 }
@@ -185,7 +185,6 @@ body {
 
 
 
-
 /* About */
 .about {
   padding: 60px 20px;
@@ -206,7 +205,7 @@ body {
   color: #c4d6f3;
 }
 
-/* Info Boxes */
+
 .info-boxes {
   width: 100%;
   padding: 40px 20px;
@@ -236,9 +235,6 @@ body {
   height: 150px;
   border-radius: 8px;
 }
-
-
-
 
 
 
@@ -294,12 +290,6 @@ body {
 
 
 
-
-
-
-
-
-/* Footer */
 .footer {
   background: #0c1828;
   color: #c2dbff;
@@ -309,15 +299,15 @@ body {
   position: relative;
   animation: fadeSlideUp 0.8s ease forwards;
   animation-delay: 1.4s;
-  box-shadow: inset 0 4px 10px -6px #1e90ff; /* sombra interna sutil celeste */
-  border-top: 3px solid transparent; /* para dar espacio */
-  border-image: linear-gradient(to right, #1e90ff, #5aa0ff) 1; /* borde con degradado celeste */
+  box-shadow: inset 0 4px 10px -6px #1e90ff; 
+  border-top: 3px solid transparent; 
+  border-image: linear-gradient(to right, #1e90ff, #5aa0ff) 1; 
 }
 
 
 
 
-/* Responsive */
+
 @media (max-width: 1024px) {
   .nav-links {
     position: static;
@@ -369,27 +359,27 @@ body {
     padding: 40px 15px;
   }
 }
-/* Scrollbar para navegadores WebKit (Chrome, Edge, Safari) */
+
 ::-webkit-scrollbar {
-  width: 12px; /* ancho de la barra */
+  width: 12px; 
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0f1a; /* fondo del track, oscuro para que combine */
+  background: #0b0f1a; 
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1e90ff; /* celeste */
+  background-color: #1e90ff; 
   border-radius: 10px;
-  border: 3px solid #0b0f1a; /* un borde para dar espacio y que no se vea tan pegado */
+  border: 3px solid #0b0f1a; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #5aa0ff; /* celeste más claro al pasar el mouse */
+  background-color: #5aa0ff; 
 }
 
-/* Scrollbar para Firefox */
+
 * {
   scrollbar-width: thin;
   scrollbar-color: #064583 #0b0f1a;
@@ -412,7 +402,7 @@ body {
   flex-grow: 1;
 }
 
-/* Ícono info */
+
 .credit-toggle {
   cursor: pointer;
   font-size: 1.3rem;
@@ -435,7 +425,6 @@ body {
   outline: none;
 }
 
-/* Texto oculto inicialmente */
 .credit-text {
   position: absolute;
   bottom: 50px;
@@ -455,7 +444,6 @@ body {
   z-index: 100;
 }
 
-/* Cuando está activo */
 .credit-text.show {
   opacity: 1;
   pointer-events: auto;
